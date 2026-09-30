@@ -1,0 +1,25 @@
+{
+  "name": "st-moura-hospital",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "backend:build": "rm -f dist/ghost-backend && go build -o dist/ghost-backend ./backend/cmd/ghost-backend",
+    "desktop:dev": "tauri dev",
+    "desktop:build": "tauri build -- --bundles app",
+    "build:mac": "scripts/build-mac.sh",
+    "test": "npm run build && go test ./..."
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.9.4",
+    "@types/three": "^0.184.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "three": "^0.184.0"
+  }
+}
